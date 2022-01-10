@@ -852,10 +852,10 @@ pub contract ABD: NonFungibleToken {
         self.totalSupply = 0
 
         // Put a new Collection in storage
-        self.account.save<@Collection>(<- create Collection(), to: /storage/MomentCollection)
+        self.account.save<@Collection>(<- create Collection(), to: /storage/ABDMomentCollection)
 
         // Create a public capability for the Collection
-        self.account.link<&{MomentCollectionPublic}>(/public/MomentCollection, target: /storage/MomentCollection)
+        self.account.link<&{MomentCollectionPublic}>(/public/ABDMomentCollection, target: /storage/ABDMomentCollection)
 
         // Put the Minter in storage
         self.account.save<@Admin>(<- create Admin(), to: /storage/ABDAdmin)
